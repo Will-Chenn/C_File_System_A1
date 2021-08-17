@@ -1,0 +1,20 @@
+./simfs -f demo initfs
+
+./simfs -f demo createfile testfile
+
+./simfs -f demo writefile testfile 0 4
+demo
+
+./simfs -f demo readfile testfile 0 4
+demo
+
+A1FileSystem$ ./simfs -f demo readfile testfile 0 5
+Error: size and length invalid
+
+A1FileSystem$ ./simfs -f demo readfile testfile 0 3
+dem
+
+./simfs -f demo deletefile testfile
+
+
+./simfs -f demo printfs
